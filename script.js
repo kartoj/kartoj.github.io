@@ -50,7 +50,7 @@ function generateBarcode(content, element) {
     let value = content;
     if (value.length === 12) {
       // JsBarcode will calculate the checksum
-    } else if (value.length === 13 && value.endsWith('0')) {
+    } else if (value.length === 13 && value.endsWith("0")) {
       // Sometimes trailing zero is used as a placeholder, remove it
       value = value.slice(0, 12);
     }
@@ -60,7 +60,7 @@ function generateBarcode(content, element) {
       height: 80,
       displayValue: true,
       margin: 0,
-      flat: true
+      flat: true,
     });
     element.appendChild(svg);
   }
