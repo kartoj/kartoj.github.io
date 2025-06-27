@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Generate all QR codes from data-qr-content attributes
-  document.querySelectorAll('[data-qr-content]').forEach(el => {
-    const content = el.getAttribute('data-qr-content');
+  document.querySelectorAll("[data-qr-content]").forEach((el) => {
+    const content = el.getAttribute("data-qr-content");
     if (content && el.id) {
       generateQR(content, el.id);
     }
