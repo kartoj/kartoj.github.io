@@ -8,4 +8,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Generate Kaufland QR code using QRious
+  if (window.QRious) {
+    const qr = new QRious({
+      value: "KQR00001:203109971238",
+      size: 150,
+      background: "#fafafa",
+      foreground: "#000",
+    });
+    const container = document.getElementById("kaufland-qr");
+    if (container) {
+      container.innerHTML = ""; // Clear any placeholder
+      container.appendChild(qr.image);
+    }
+  }
 });
