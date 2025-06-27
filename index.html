@@ -1,1 +1,63 @@
-kartoj
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kartoj</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Kartoj</h1>
+    <p class="subtitle">zakaznické karty do různých obchodů, bez registrace</p>
+  </header>
+
+  <main>
+    <section class="accordion">
+      <details>
+        <summary>Tesco</summary>
+        <div class="qr">
+          <!-- Dummy QR Code (Replace with actual data) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <rect width="100" height="100" fill="#000"/>
+          </svg>
+        </div>
+      </details>
+      <details>
+        <summary>Billa</summary>
+        <div class="qr">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50" fill="#000"/>
+          </svg>
+        </div>
+      </details>
+      <details>
+        <summary>Kaufland</summary>
+        <div class="qr">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path d="M10,10 H90 V90 H10 Z" fill="#000"/>
+          </svg>
+        </div>
+      </details>
+      <details>
+        <summary>Lidl</summary>
+        <div class="qr">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <rect x="20" y="20" width="60" height="60" fill="#000"/>
+          </svg>
+        </div>
+      </details>
+      <details>
+        <summary>Rossmann</summary>
+        <div class="qr">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <line x1="0" y1="0" x2="100" y2="100" stroke="#000" stroke-width="10"/>
+            <line x1="0" y1="100" x2="100" y2="0" stroke="#000" stroke-width="10"/>
+          </svg>
+        </div>
+      </details>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
