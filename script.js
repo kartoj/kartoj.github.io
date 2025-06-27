@@ -21,12 +21,9 @@ function generateQR(content, elementId) {
     });
     const container = document.getElementById(elementId);
     if (container) {
-      container.innerHTML = ""; // Clear any placeholder
+      container.innerHTML = "";
       container.appendChild(qr.image);
     }
   }
 }
 window.generateQR = generateQR;
-
-// Example: generate Kaufland QR code
-generateQR("KQR00001:203109971238", "kaufland-qr");
