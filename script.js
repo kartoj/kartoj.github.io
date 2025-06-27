@@ -1,5 +1,7 @@
 // Close accordion details when clicking on the content area (not the summary)
 document.addEventListener("DOMContentLoaded", () => {
+  JsBarcode(".barcode").init();
+
   document.querySelectorAll(".accordion details").forEach((details) => {
     details.addEventListener("click", function (e) {
       // Only close if clicking inside details but NOT on summary
@@ -46,20 +48,20 @@ function generateBarcode(content, element) {
   if (window.JsBarcode && element) {
     element.innerHTML = ""; // Clear any placeholder
     const svg = document.createElement("svg");
-    // EAN-13 requires 12 digits + checksum, so pad with leading zero if needed
+    // EAN-13 requires 12 digits (JsBarcode adds checksum)
     let value = content;
-    if (value.length === 12) {
-      // JsBarcode will calculate the checksum
-    } else if (value.length === 13 && value.endsWith("0")) {
-      // Sometimes trailing zero is used as a placeholder, remove it
-      value = value.slice(0, 12);
+    // Always use only the first 12 digits for EAN-13
+    value = value.replace(/\D/g, "").slice(0, 12);
+    if (value.length !== 12) {
+      element.textContent = "Invalid EAN-13 code";
+      return;
     }
     JsBarcode(svg, value, {
       format: "ean13",
       width: 2,
       height: 80,
       displayValue: true,
-      margin: 0,
+      margin: 10,
       flat: true,
     });
     element.appendChild(svg);
