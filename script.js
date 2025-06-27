@@ -12,26 +12,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Generate all QR codes from data-qr-content attributes
   document.querySelectorAll("[data-qr-content]").forEach((el) => {
     const content = el.getAttribute("data-qr-content");
-    if (content && el.id) {
-      generateQR(content, el.id);
+    if (content) {
+      generateQR(content, el);
     }
   });
 });
 
 // Generate Kaufland QR code using QRious
-function generateQR(content, elementId) {
-  if (window.QRious) {
+function generateQR(content, element) {
+  if (window.QRious && element) {
     const qr = new QRious({
       value: content,
       size: 150,
       background: "#fafafa",
       foreground: "#000",
     });
-    const container = document.getElementById(elementId);
-    if (container) {
-      container.innerHTML = "";
-      container.appendChild(qr.image);
-    }
+    element.innerHTML = "";
+    element.appendChild(qr.image);
   }
 }
 window.generateQR = generateQR;
