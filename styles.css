@@ -74,8 +74,3 @@ main {
   justify-content: center;
   align-items: center;
 }
-
-.qr svg {
-  width: 300px;
-  height: 300px;
-}
