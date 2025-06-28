@@ -8,26 +8,32 @@
 body {
   font-family: sans-serif;
   color: #333;
-  padding: 2rem;
+  padding: 0;
+  margin: 0;
 }
-
-/* Header */
 header {
-  background-color: #002147; /* dark blue */
+  background-color: #002147;
   color: #fff;
-  padding: 2rem;
+  padding: 0.5rem 1rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0;
 }
 
 header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+main {
+  padding: 1rem;
+  max-width: 800px;
+  margin: auto;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  opacity: 0.8;
+  display: none;
 }
 
 /* Accordion Style */
